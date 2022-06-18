@@ -11,7 +11,7 @@ import { map, finalize } from "rxjs/operators";
 })
 export class AdduserComponent implements OnInit {
 
-  utilisateur=new User();
+ public  utilisateur=new User();
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
@@ -31,5 +31,9 @@ createUser()
   this.userService.createUser(user);
   this.utilisateur=new User();
   this.utilisateur.grade="client";
+}
+detectUser(us:User)
+{
+  this.utilisateur=us;
 }
 }

@@ -3,7 +3,7 @@ import { User } from '../classes/user';
 import { Observable } from 'rxjs';
 import { map, finalize } from "rxjs/operators";
 import { UserService } from '../services/user.service';
-
+import { AdduserComponent } from '../adduser/adduser.component';
 @Component({
   selector: 'app-list-users',
   templateUrl: './list-users.component.html',
@@ -14,7 +14,9 @@ export class ListUsersComponent implements OnInit {
   users?:User[];
   selection :any[]=[];
   filtre:string="";
-  constructor(private userService:UserService) { }
+  cuser=new User();
+
+  constructor(private userService:UserService,private addUser:AdduserComponent) { }
 
   ngOnInit(): void {
     this.users=[];
@@ -60,4 +62,10 @@ this.readMyUsers();
       this.userService.deleteUser(id);
     }
   }
+selectit(us:User)
+{
+  this.cuser=us;
+ // localStorage.setItem("current",JSON.stringify(this.cuser));
+  this.addUser.detectUser(this.cuser);
+}
 }
