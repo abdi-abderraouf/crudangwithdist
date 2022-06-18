@@ -1,0 +1,28 @@
+<div>
+  <div class="text-center"> <button class="btn btn-danger" [disabled]="selection==[]" (click)="deleteAdll()">Supprimer la séléction</button></div>
+
+<table class="table bordered">
+<thead>
+  <tr>
+    <th>#</th>
+    <th>Nom Complet</th>
+    <th>Email</th>
+    <th>Adresse</th>
+    <th>Tel</th>
+    <th>Action</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let us of users" >
+<td ><input placeholder="x" name="sel" (click)="adddel(us.id)" type="checkbox"> Select</td>
+<td>{{us.nomcomplet}}</td>
+<td>{{us.email}}</td>
+<td>{{us.adresse}}</td>
+<td>{{us.tel}}</td>
+<td><button (click)="deleteOne(us.id)" class="btn btn-danger">supprimer</button></td>
+
+  </tr>
+</tbody>
+
+</table>
+

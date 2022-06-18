@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+    </div>
+    <div class="col">
+
+      <form>
+        <div class="mb-3">
+          <label >Nom complet</label>
+          <input type="text" [(ngModel)]="utilisateur.nomcomplet" class="form-control" name="nc" placeholder="Nom complet">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Email address</label>
+          <input type="email" [(ngModel)]="utilisateur.email" class="form-control" name="mail" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Mot de passe</label>
+          <input type="password" [(ngModel)]="utilisateur.mdp" class="form-control" name="pass"  placeholder="Votre mot de passe ici">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Telephone</label>
+          <input type="text" class="form-control" [(ngModel)]="utilisateur.adresse" name="adr" placeholder="tel">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Adresse</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="utilisateur.tel" name="tel" rows="3"></textarea>
+        </div>
+        <div class="mb-3 text-center">
+          <button (click)="createUser()" class="btn btn-primary">Ajouter</button>
+        </div>
+
+
+      </form>
+
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+</div>
+<div>
+
+</div>
+<app-list-users></app-list-users>
