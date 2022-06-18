@@ -10,7 +10,7 @@ import { map, finalize } from "rxjs/operators";
   styleUrls: ['./adduser.component.css']
 })
 export class AdduserComponent implements OnInit {
-
+selected=false;
  public  utilisateur=new User();
   constructor(private userService:UserService) { }
 
@@ -35,5 +35,18 @@ createUser()
 detectUser(us:User)
 {
   this.utilisateur=us;
+  this.selected=true;
+}
+annuler()
+{
+  this.utilisateur=new User();
+  this.selected=false;
+}
+update()
+{
+  let user=Object.assign({},this.utilisateur); // pour créer un objet json à partir de this.utilisateur
+  this.userService.updateUser(user.id,user);
+  alert("modifié avec succés");
+  this.annuler();
 }
 }

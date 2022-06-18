@@ -27,7 +27,12 @@
           <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="utilisateur.tel" name="tel" rows="3"></textarea>
         </div>
         <div class="mb-3 text-center">
-          <button (click)="createUser()" class="btn btn-primary">Ajouter</button>
+          <button *ngIf="!selected" (click)="createUser()" class="btn btn-primary">Ajouter</button>
+          <div *ngIf="selected">
+            <button (click)="update()" class="btn btn-success">Modifier</button>
+           &nbsp;&nbsp; <button (click)="annuler()" class="btn btn-warning">annuler</button>
+           <br>
+          </div>
         </div>
 
 

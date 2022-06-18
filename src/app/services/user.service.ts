@@ -17,7 +17,7 @@ readUser()
 {
   return this.firestore.collection("Utilisateur").snapshotChanges();
 }
-updateUser(recordId:string,record:any)
+updateUser(recordId?:string,record?:any)
 {
   return this.firestore.doc("Utilisateur/"+recordId).update(record);
 }
