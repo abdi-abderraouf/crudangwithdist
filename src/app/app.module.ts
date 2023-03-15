@@ -14,7 +14,9 @@ import { ListUsersComponent } from './list-users/list-users.component';
   declarations: [
     AppComponent,
     AdduserComponent,
-    ListUsersComponent
+    ListUsersComponent,
+
+
   ],
   imports: [
     BrowserModule,

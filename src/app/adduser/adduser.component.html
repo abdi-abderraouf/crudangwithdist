@@ -20,11 +20,11 @@
         </div>
         <div class="mb-3">
           <label  class="form-label">Telephone</label>
-          <input type="text" class="form-control" [(ngModel)]="utilisateur.adresse" name="adr" placeholder="tel">
+          <input type="text" class="form-control" [(ngModel)]="utilisateur.tel" name="adr" placeholder="tel">
         </div>
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label">Adresse</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="utilisateur.tel" name="tel" rows="3"></textarea>
+          <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="utilisateur.adresse" name="tel" rows="3"></textarea>
         </div>
         <div class="mb-3 text-center">
           <button *ngIf="!selected" (click)="createUser()" class="btn btn-primary">Ajouter</button>
